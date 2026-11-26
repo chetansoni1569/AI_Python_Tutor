@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One-Word AI Tutor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <h1>One-Word AI Tutor</h1>
+    <p class="subtitle">Ask anything. Get one word back.</p>
+
+    <section>
+      <label for="api-key">Gemini API key</label>
+      <div class="row">
+        <input id="api-key" type="password" autocomplete="off" placeholder="Paste your API key">
+        <button id="save-key" type="button">Save key</button>
+        <button id="clear-key" type="button" class="secondary">Clear</button>
+      </div>
+      <p id="key-status" class="hint">No key saved yet.</p>
+    </section>
+
+    <section>
+      <label for="question">Your question</label>
+      <div class="row">
+        <input id="question" type="text" maxlength="1000" placeholder="Is the Earth round?" autocomplete="off">
+        <button id="ask" type="button">Ask</button>
+      </div>
+    </section>
+
+    <section>
+      <div id="result" class="result" aria-live="polite">{"answer":""}</div>
+      <p id="error" class="error" hidden></p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
